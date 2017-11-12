@@ -1,3 +1,4 @@
+"use strict";
 //var myDBClass = require('/home/corinne/messageServer/myDB.js');
 
 /*function dbCallback(err,results) {
@@ -16,9 +17,7 @@ const app = express();
 var bodyParser = require('body-parser')
 
 app.use(express.static('public'));
-//app.use(express.bodyParser());
 
-// parse application/json
 app.use(bodyParser.json());
 
 app.get('/test',rest.restRequest);
