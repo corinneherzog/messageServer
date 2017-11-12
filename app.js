@@ -1,17 +1,17 @@
-var myDBClass = require('/home/corinne/chatServerTwo/myDB.js');
+//var myDBClass = require('/home/corinne/messageServer/myDB.js');
 
-function dbCallback(err,results) {
+/*function dbCallback(err,results) {
   console.log("err= " + err + "results= " + results);
 }
 
 var dbOps = new myDB("chat"); 
 dbOps.insert(message,dbCallback);
 return ; 
-
+*/
 
 
 const express = require('express');
-var rest = require('/home/corinne/chatServerTwo/restServer/index.js');
+var rest = require('/home/corinne/messageServer/restServer/index.js');
 const app = express();
 var bodyParser = require('body-parser')
 
