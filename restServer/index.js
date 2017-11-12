@@ -1,4 +1,4 @@
-
+"use strict";
 var userMessages = {};
 var messageData = {};
 
@@ -51,18 +51,19 @@ function restRequest(req,res){
 
  function deleteMessages (req,res){
     let id = req.params.id;
+    console.log(id);
     if (id in messageData ){
       let message = messageData[id];
-      removeUserMessage(message.sender);
-      removeUserMessage(message.receiver);
+      removeUserMessage(message.sender, id);
+      removeUserMessage(message.receiver, id);
       delete(messageData[id]);
     }
   }
 
-  function removeUserMessage(user){
+  function removeUserMessage(user,id){
     let messages = userMessages[user];
-    let index = messages.indexOf(message.guid);
-    messages.remove(index);
+    let index = messages.indexOf(id);
+    messages.splice(index, 1);
   }
 
   function guid() {
